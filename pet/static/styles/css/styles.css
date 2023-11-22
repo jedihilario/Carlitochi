@@ -1,0 +1,82 @@
+/* Variables formulario */
+* {
+  color: #ffffff;
+  margin: 0; }
+
+body {
+  background-color: #28536B; }
+
+main.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.href {
+  color: #ffffff;
+  text-decoration: none; }
+
+.carlo-login {
+  width: 80%;
+  height: auto;
+  transition: transform 1s ease-in-out; }
+
+.carlo-login:hover {
+  transform: rotate(360deg); }
+
+/* Parte de carlito */
+.carl-sex {
+  width: 70%;
+  height: auto; }
+
+.carl-sex2 {
+  width: 60%;
+  height: auto; }
+
+.contenedor-carlito, .contenedor-carlito2 {
+  display: inline;
+  max-width: auto;
+  padding: 1.5em;
+  background-color: #18414E;
+  margin: 2em 1em;
+  border: #040710 6px solid; }
+  .contenedor-carlito .formulario-carlo, .contenedor-carlito2 .formulario-carlo {
+    display: inline-block;
+    border: 4px #000000 solid;
+    margin-left: 1.5em;
+    margin-bottom: 1em; }
+
+.contenedor-carlito2 {
+  max-width: 60%; }
+
+.saludable, .chatarra {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: auto;
+  padding: 0.6em;
+  margin-bottom: 1em;
+  border: 4px #000000 solid; }
+  .saludable img, .chatarra img {
+    width: 100px;
+    height: auto;
+    transition: all 1s; }
+  .saludable img:hover, .chatarra img:hover {
+    scale: 0.70; }
+
+.botones-comida {
+  background-color: transparent;
+  border: transparent;
+  width: 5em;
+  margin-left: 1em; }
+
+.footer-text, .header-text {
+  display: block;
+  max-width: auto;
+  margin-top: 2em;
+  padding: 1.5em;
+  background-color: #18414E;
+  border: #040710 6px solid; }
+  .footer-text h6, .header-text h6 {
+    margin-bottom: 2em; }
+
+/*# sourceMappingURL=styles.css.map */

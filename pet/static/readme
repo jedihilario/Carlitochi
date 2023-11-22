@@ -1,0 +1,3 @@
+· Para activar el watcher de sass en styles.css
+- cd styles/
+- sass --watch scss:css

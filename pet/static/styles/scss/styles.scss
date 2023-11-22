@@ -1,0 +1,112 @@
+@import "./variables.scss";
+
+*{
+    color: $--color1;
+    margin: 0;
+}
+
+body{
+    background-color: $--background4;
+}
+
+main.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.href{
+    color: $--color2;
+    text-decoration: none;
+}
+
+.carlo-login{
+    width: 80%;
+    height: auto;
+    transition: transform 1s ease-in-out; 
+    // border: $--border;
+}
+
+.carlo-login:hover {
+    transform: rotate(360deg);
+} 
+
+/* Parte de carlito */
+
+.carl-sex{
+    width: 70%;
+    height: auto;
+    // border: $--border-hitbox;
+}
+
+.carl-sex2{
+    width: 60%;
+    height: auto;
+}
+
+.contenedor-carlito, .contenedor-carlito2{
+    display: inline;
+    max-width: auto;
+    padding: 1.5em;
+    background-color: $--background1;
+    margin: 2em 1em;
+    border: $--border;
+
+    .formulario-carlo{
+        display: inline-block;  
+        border: $--border2;
+        margin-left: 1.5em;
+        margin-bottom: 1em;
+    }
+}
+
+
+.contenedor-carlito2{
+    max-width: 60%;
+}
+
+.saludable, .chatarra{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: auto;
+    padding: 0.6em;
+    margin-bottom: 1em;
+    border: $--border2;
+
+    img{
+        width: 100px;
+        height: auto;
+        transition: all 1s;
+        //border: $--border-hitbox;
+    }
+
+    img:hover{
+        scale: 0.70;   
+    }
+}
+
+
+.botones-comida{
+    background-color: transparent;
+    border: transparent;
+    width: 5em;
+    margin-left: 1em;
+}
+
+
+.footer-text, .header-text{
+    display: block;
+    max-width: auto;
+    margin-top: 2em;
+    padding: 1.5em;
+    background-color: $--background1;
+    border: $--border;
+    
+    h6{
+        margin-bottom: 2em; 
+    }
+}
+
+
+
