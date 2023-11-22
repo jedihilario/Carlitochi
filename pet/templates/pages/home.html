@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Carlito{% endblock %}
+
+{% block content %}
+<main class="container">
+    <header class="header-text">
+        <h1> Bienvenido a <span class="badge rounded-pill bg-success justify-content-center"> {{nombre}} </span> </h1>
+    </header>
+    
+    <div class="contenedor-carlito">
+        <img src="{% static 'mm/slays/Sprite-0001.png' %}" class="mx-auto d-block img-fluid carl-sex">
+        
+        <form method="GET" action="{% url 'comer' %}" class="formulario-carlo">
+            <button class="btn btn-primary boton-carlo"> Comer </button>
+        </form>
+
+        <form method="GET" action="{% url 'banio' %}" class="formulario-carlo">
+            <button class="btn btn-primary boton-carlo"> Ir a Roca </button>
+        </form>
+
+        <form method="GET" action="{% url 'banio' %}" class="formulario-carlo">
+            <button class="btn btn-primary boton-carlo"> Bañarse </button>
+        </form>
+
+        <form method="GET" action="{% url 'stats' %}" class="formulario-carlo">
+            <button class="btn btn-primary boton-carlo"> Stats </button>
+        </form>
+
+        <form method="GET" action="{% url 'stats' %}" class="formulario-carlo">
+            <button class="btn btn-primary boton-carlo"> Gym </button>
+        </form>
+    </div>
+
+    <footer class="footer-text">
+        <p> Carlito, es una mascota creada a partir de un projecto de la escuela basado en Django. </p>
+        <p> Los creadores de esta mascota virtual son:<br> The PapuPeek y Tetoncito (diseñadores)<br>Jedihilario and Shelby(Back)</p>
+        <p> Espero que lo disfruten, esto esta hecho con mucho love </p>
+        <h6> Pd: el nombre "Carlito" proviene de un dialecto del diseñador, el cual hacia referencia a los sanguches de miga<br>(Si queres escuchar musica porque estas embolado jugando este juego, ponete este tema:  )</h6>
+        <audio controls>
+            <source src="{% static 'mm/soundtrack1.mp3' %}" type="audio/mpeg">
+        </audio>
+    </footer>
+</main>
+{% endblock %}
