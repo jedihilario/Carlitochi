@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Iniciar Sesion{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="login container d-flex align-items-center justify-content-center">
+      <div class="carrusel-imagen">
+        <img src="{% static 'mm/slays/Sprite-0007.png' %}" class="carlo-login mx-auto d-block img-fluid animated-image carlo-base" alt="Carlito3"> 
+      </div>
+  
+      <section class="section_form">
+        <h1><span class="badge rounded-pill bg-success justify-content-center"> Carlito </span></h1>
+        <form id="consultation-form" class="feed-form" action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <input name="username" required placeholder="Ingrese su usuario" type="text">
+            <input name="password" required placeholder="Ingrese su contraseña" type="password">
+            <button class="button_submit btn btn-success" type="submit"> Iniciar Sesion </button>
+        </form>
+
+        {% if failed == True %}
+          <button class="btn btn-danger rounded-pill button_submit"> 
+            <h2> INCORRECTO!! </h2>
+          </button>
+        {% endif %}
+      </section>
+    </div>
+  </main>
+{% endblock %}

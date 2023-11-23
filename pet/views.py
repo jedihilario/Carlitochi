@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate
 from .models import Pet
 
 # Create your views here.
@@ -54,6 +54,20 @@ def signup (request):
             return render(request, 'pages/signup.html', { 'failed': True })
 
     return render(request, 'pages/signup.html', { 'failed': False })
+
+def login_req (request):
+    if (request.method == 'POST'):
+        try:
+            user = authenticate(username = request.POST['username'], password = request.POST['password'])
+            if (user != None):
+                login(request, user)
+                return redirect('/home')
+            else:
+                raise Exception('Login failed')
+        except:
+            return render(request, 'pages/login.html', { 'failed': True })
+
+    return render(request, 'pages/login.html', { 'failed': False })
 
 def home (request):
     name = Pet.objects.get(nombre = 'elpepe')
