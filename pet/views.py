@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from .models import Pet
 
 # Create your views here.
 
@@ -16,7 +17,18 @@ def signup (request):
     return render(request, 'pages/signup.html', { 'failed': False })
 
 def home (request):
-    return render(request, 'pages/home.html', { 'nombre': 'pene' })
+    name = Pet.objects.get(nombre = 'elpepe')
+    return render(request, 'pages/home.html', { 'nombre': name })
 
 def eat (request):
-    return render(request, 'pages/eat.html', { 'nombre': 'pene' })
+    name = Pet.objects.get(nombre = 'elpepe')
+    return render(request, 'pages/eat.html', { 'nombre': name })
+
+def stats (request):
+    pet = Pet.objects.get(nombre = 'elpepe')
+    return render(request, 'pages/stats.html', {
+        'nombre': pet.nombre,
+        'hambre': pet.hambre,
+        'salud': pet.salud,
+        'diversion': pet.diversion
+    })

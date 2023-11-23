@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Estadisticas {% endblock %}
+
+{% block content %}
+<main class="container">
+    <header class="header-text">
+        <h1><span class="badge rounded-pill bg-success justify-content-center"> {{ nombre }} </span></h1>
+    </header>
+    
+    <div class="contenedor-carlito">
+        <img id="carlo-base" src="{% static 'mm/slays/Sprite-0001.png' %}" class="mx-auto d-block img-fluid carl-sex">
+        <ul class="h4 ul-stats">
+            <li>
+                <p class="salud badge rounded-pill bg-success "> Salud de tu bicho: {{salud}} </p>
+            </li>
+
+            <li>
+                <p class="hambruna badge rounded-pill bg-success"> Hambruna: {{hambre}} </p>
+            </li>
+
+            <li>
+                <p class="diversion badge rounded-pill bg-success "> Diversion: {{diversion}} </p>
+            </li>
+
+            <!-- <li>
+                <p class="gympower badge rounded-pill bg-success "> Nivel de Gymrat: {{gympower}} </p>
+            </li> -->
+        </ul>
+    </div>
+</main>
+{% endblock %}
