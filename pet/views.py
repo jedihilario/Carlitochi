@@ -5,6 +5,45 @@ from .models import Pet
 
 # Create your views here.
 
+foods = {
+    'default': {
+        'hambre': 0,
+        'salud': 0
+    },
+    'creatine': {
+        'hambre': -3,
+        'salud': 0
+    },
+    'chicken': {
+        'hambre': -15,
+        'salud': 0
+    },
+    'pasta' : {
+        'hambre': -10,
+        'salud': 0
+    },
+    'salad': {
+        'hambre': -3,
+        'salud': 0
+    },
+    'burger': {
+        'hambre': -15,
+        'salud': -3
+    },
+    'fernet': {
+        'hambre': -2,
+        'salud': -5
+    },
+    'viagra': {
+        'salud': -13,
+        'hambre': 0
+    },
+    'laxante': {
+        'salud': -16,
+        'hambre': 13
+    }
+}
+
 def signup (request):
     if (request.method == 'POST'):
         try:
@@ -21,8 +60,24 @@ def home (request):
     return render(request, 'pages/home.html', { 'nombre': name })
 
 def eat (request):
+    pet = Pet.objects.get(nombre = 'elpepe')
+
+    if (request.method == 'POST'):
+        f = 'default'
+
+        for i in request.POST.keys():
+            if (i in foods): f = i; break
+
+        pet.hambre += foods[f]['hambre']
+        pet.salud += foods[f]['salud']
+        pet.save()
+        return redirect('/stats')
+
+    return render(request, 'pages/eat.html', { 'nombre': pet.nombre })
+
+def bathroom (request):
     name = Pet.objects.get(nombre = 'elpepe')
-    return render(request, 'pages/eat.html', { 'nombre': name })
+    return render(request, 'pages/bathroom.html', { 'nombre': name })
 
 def stats (request):
     pet = Pet.objects.get(nombre = 'elpepe')

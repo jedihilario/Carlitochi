@@ -17,11 +17,11 @@
             <button class="btn btn-primary boton-carlo"> Comer </button>
         </form>
 
-        <form method="GET" action="{% url 'banio' %}" class="formulario-carlo">
+        {% comment %} <form method="GET" action="{% url 'bathroom' %}" class="formulario-carlo">
             <button class="btn btn-primary boton-carlo"> Ir a Roca </button>
-        </form>
+        </form> {% endcomment %}
 
-        <form method="GET" action="{% url 'banio' %}" class="formulario-carlo">
+        <form method="GET" action="{% url 'bathroom' %}" class="formulario-carlo">
             <button class="btn btn-primary boton-carlo"> Bañarse </button>
         </form>
 
@@ -29,9 +29,9 @@
             <button class="btn btn-primary boton-carlo"> Stats </button>
         </form>
 
-        <form method="GET" action="{% url 'stats' %}" class="formulario-carlo">
+        {% comment %} <form method="GET" action="{% url 'stats' %}" class="formulario-carlo">
             <button class="btn btn-primary boton-carlo"> Gym </button>
-        </form>
+        </form> {% endcomment %}
     </div>
 
     <footer class="footer-text">
