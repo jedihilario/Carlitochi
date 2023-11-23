@@ -35,6 +35,6 @@ DATABASES = {
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "carlitochi",
+        "NAME": BASE_DIR / 'carlito.sqlite3',
     }
 }
