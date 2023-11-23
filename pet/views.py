@@ -15,5 +15,8 @@ def signup (request):
 
     return render(request, 'pages/signup.html', { 'failed': False })
 
-def home(request):
-    return render(request, 'pages/home.html')
+def home (request):
+    return render(request, 'pages/home.html', { 'nombre': 'pene' })
+
+def eat (request):
+    return render(request, 'pages/eat.html', { 'nombre': 'pene' })

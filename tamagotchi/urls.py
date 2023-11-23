@@ -21,5 +21,6 @@ from pet import views
 urlpatterns = [
     path('admin/', admin.site.urls, name = 'admin'),
     path('signup/', views.signup, name = 'signup'),
-    path('home/', views.home, name = 'home')
+    path('home/', views.home, name = 'home'),
+    path('eat/', views.eat, name = 'eat')
 ]

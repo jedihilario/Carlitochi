@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<main class="container">
+    <header class="header-text">
+        <h1> Bienvenido a <span class="badge rounded-pill bg-success justify-content-center"> {{nombre}} </span> </h1>
+    </header>
+    
+    <div class="contenedor-carlito2">
+        <img src="{% static 'mm/slays/Sprite-0001.png' %}" class="mx-auto d-block img-fluid carl-sex2">
+        
+        <div class="saludable bg-success">
+            <h3 class=""> Saludable: </h3>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <button class="botones-comida" type="submit" name="creatine"> 
+                    <img src="{% static 'mm/morfi/creatina.png' %}"> 
+                </button>
+
+                <button class="botones-comida" type="submit" name="salad">
+                    <img src="{% static 'mm/morfi/ensalada.png' %}">
+                </button>
+
+                <button class="botones-comida" type="submit" name="chicken"> 
+                    <img src="{% static 'mm/morfi/pollo.png' %}">
+                </button>
+
+                <button class="botones-comida" type="submit" name="fish"> 
+                    <img src="{% static 'mm/morfi/pescado.png' %}">
+                </button>
+            </form>
+        </div>
+
+        <div class="chatarra bg-danger">
+            <h3 class=""> Chatarra: </h3>
+            <form method="POST" action="#">
+                {% csrf_token %}
+                <button class="botones-comida" type="submit"> 
+                    <img src="{% static 'mm/morfi/mcdonalds.png' %}">
+                </button>
+
+                <button class="botones-comida" type="submit"> 
+                    <img src="{% static 'mm/morfi/ferne.png' %}">
+                </button>
+
+                <button class="botones-comida" type="submit"> 
+                    <img src="{% static 'mm/morfi/viagra.png' %}">
+                </button>
+
+                <button class="botones-comida" type="submit"> 
+                    <img src="{% static 'mm/morfi/laxante.png' %}">
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
