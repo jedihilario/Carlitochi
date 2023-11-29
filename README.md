@@ -38,3 +38,6 @@ DATABASES = {
         "NAME": BASE_DIR / 'carlito.sqlite3',
     }
 }
+
+### Sass watcher
+sass --watch css:scss

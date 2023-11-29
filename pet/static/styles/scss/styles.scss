@@ -40,12 +40,17 @@ main.container {
     // border: $--border-hitbox;
 }
 
-.carl-sex2{
+.carlo-sex, .carl-sex2, .carl-sex3{
     width: 60%;
     height: auto;
+    transition: transform 1s ease-in-out;
 }
 
-.contenedor-carlito, .contenedor-carlito2{
+.carl-sex3:hover{
+    transform: rotate(360deg);
+}
+
+.contenedor-carlito, .contenedorb-carlito, .contenedor-carlito2{
     display: inline;
     max-width: auto;
     padding: 1.5em;
@@ -55,7 +60,7 @@ main.container {
 
     .formulario-carlo{
         display: inline-block;  
-        border: $--border2;
+        //border: $--border2;
         margin-left: 1.5em;
         margin-bottom: 1em;
     }
@@ -108,5 +113,17 @@ main.container {
     }
 }
 
+.contenedorb-carlito{
+    background-image: url("../../mm/rooms/banio.jpg");
+    background-size: cover;
+}
 
+.contenedor-carlito{
+    background-image: url("../../mm/rooms/living.jpg");
+    background-size: cover;
+}
 
+.contenedor-carlito2{
+    background-image: url("../../mm/rooms/comedor.jpg");
+    background-size: cover;
+}

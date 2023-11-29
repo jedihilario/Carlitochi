@@ -29,20 +29,23 @@ main.container {
   width: 70%;
   height: auto; }
 
-.carl-sex2 {
+.carlo-sex, .carl-sex2, .carl-sex3 {
   width: 60%;
-  height: auto; }
+  height: auto;
+  transition: transform 1s ease-in-out; }
 
-.contenedor-carlito, .contenedor-carlito2 {
+.carl-sex3:hover {
+  transform: rotate(360deg); }
+
+.contenedor-carlito, .contenedorb-carlito, .contenedor-carlito2 {
   display: inline;
   max-width: auto;
   padding: 1.5em;
   background-color: #18414E;
   margin: 2em 1em;
   border: #040710 6px solid; }
-  .contenedor-carlito .formulario-carlo, .contenedor-carlito2 .formulario-carlo {
+  .contenedor-carlito .formulario-carlo, .contenedorb-carlito .formulario-carlo, .contenedor-carlito2 .formulario-carlo {
     display: inline-block;
-    border: 4px #000000 solid;
     margin-left: 1.5em;
     margin-bottom: 1em; }
 
@@ -78,5 +81,17 @@ main.container {
   border: #040710 6px solid; }
   .footer-text h6, .header-text h6 {
     margin-bottom: 2em; }
+
+.contenedorb-carlito {
+  background-image: url("../../mm/rooms/banio.jpg");
+  background-size: cover; }
+
+.contenedor-carlito {
+  background-image: url("../../mm/rooms/living.jpg");
+  background-size: cover; }
+
+.contenedor-carlito2 {
+  background-image: url("../../mm/rooms/comedor.jpg");
+  background-size: cover; }
 
 /*# sourceMappingURL=styles.css.map */
