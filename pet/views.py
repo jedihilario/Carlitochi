@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from .models import Pet
 
 # Create your views here.
@@ -69,9 +69,16 @@ def login_req (request):
 
     return render(request, 'pages/login.html', { 'failed': False })
 
+def logout_req (request):
+    logout(request)
+    return redirect('/login')
+
 def home (request):
-    name = Pet.objects.get(nombre = 'elpepe')
-    return render(request, 'pages/home.html', { 'nombre': name })
+    if (request.user.is_authenticated):
+        name = Pet.objects.get(nombre = 'elpepe')
+        return render(request, 'pages/home.html', { 'nombre': name })
+    else:
+        return redirect('/error')
 
 def eat (request):
     pet = Pet.objects.get(nombre = 'elpepe')
@@ -101,3 +108,6 @@ def stats (request):
         'salud': pet.salud,
         'diversion': pet.diversion
     })
+
+def error (request):
+    return render(request, 'pages/error.html', status=404)

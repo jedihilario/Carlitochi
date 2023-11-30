@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Error {% endblock title %}
+
+{% block content %}
+<main class="container">
+    <h1 class="bg-danger p-2">Error!</h1>
+    <img decoding="async" lazy="loading" src="{% static "mm/gifs/this-is-fine-404.gif" %}" alt="Cagate un cuete">
+    <a href="{% url "login" %}">Login</a>
+</main>
+{% endblock content %}
