@@ -81,33 +81,42 @@ def home (request):
         return redirect('/error')
 
 def eat (request):
-    pet = Pet.objects.get(nombre = 'elpepe')
+    if (request.user.is_authenticated):
+        pet = Pet.objects.get(nombre = 'elpepe')
 
-    if (request.method == 'POST'):
-        f = 'default'
+        if (request.method == 'POST'):
+            f = 'default'
 
-        for i in request.POST.keys():
-            if (i in foods): f = i; break
+            for i in request.POST.keys():
+                if (i in foods): f = i; break
 
-        pet.hambre += foods[f]['hambre']
-        pet.salud += foods[f]['salud']
-        pet.save()
-        return redirect('/stats')
+            pet.hambre += foods[f]['hambre']
+            pet.salud += foods[f]['salud']
+            pet.save()
+            return redirect('/stats')
 
-    return render(request, 'pages/eat.html', { 'nombre': pet.nombre })
+        return render(request, 'pages/eat.html', { 'nombre': pet.nombre })
+    else:
+        return redirect('/error')
 
 def bathroom (request):
-    name = Pet.objects.get(nombre = 'elpepe')
-    return render(request, 'pages/bathroom.html', { 'nombre': name })
+    if (request.user.is_authenticated):
+        name = Pet.objects.get(nombre = 'elpepe')
+        return render(request, 'pages/bathroom.html', { 'nombre': name })
+    else:
+        return redirect('/error')
 
 def stats (request):
-    pet = Pet.objects.get(nombre = 'elpepe')
-    return render(request, 'pages/stats.html', {
-        'nombre': pet.nombre,
-        'hambre': pet.hambre,
-        'salud': pet.salud,
-        'diversion': pet.diversion
+    if (request.user.is_authenticated):
+        pet = Pet.objects.get(nombre = 'elpepe')
+        return render(request, 'pages/stats.html', {
+            'nombre': pet.nombre,
+            'hambre': pet.hambre,
+            'salud': pet.salud,
+            'diversion': pet.diversion
     })
+    else:
+        return redirect('/error')
 
 def error (request):
     return render(request, 'pages/error.html', status=404)
