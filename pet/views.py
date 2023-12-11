@@ -101,6 +101,12 @@ def eat (request):
 
 def bathroom (request):
     if (request.user.is_authenticated):
+        if (request.method == "POST"):
+            pet = Pet.objects.get(nombre = 'elpepe')
+            pet.salud += 2
+            pet.save()
+            return render(request, 'pages/bathroom.html', { 'nombre': pet })
+
         name = Pet.objects.get(nombre = 'elpepe')
         return render(request, 'pages/bathroom.html', { 'nombre': name })
     else:

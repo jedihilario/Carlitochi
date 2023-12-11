@@ -12,7 +12,10 @@
     
     <div class="contenedorb-carlito">
         <img src="{% static 'mm/slays/burbuj2a.png' %}" class="mx-auto d-block img-fluid carl-sex3">
-        <button class="button_submit btn btn-primary"> Pegate un baño!! </button>
+        <form action="{% url "bathroom" %}" method="POST" preventDefault id="req-form">
+            {% csrf_token %}
+            <button class="button_submit btn btn-primary"> Pegate un baño!! </button>
+        </form>    
     </div>
 </main>
 {% endblock content %}
